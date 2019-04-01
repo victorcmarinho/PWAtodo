@@ -191,6 +191,152 @@
           }
         }
       }
+    },
+    "PWA2": {
+      "root": "projects/PWA2/",
+      "sourceRoot": "projects/PWA2/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/browser",
+            "index": "projects/PWA2/src/index.html",
+            "main": "projects/PWA2/src/main.ts",
+            "polyfills": "projects/PWA2/src/polyfills.ts",
+            "tsConfig": "projects/PWA2/tsconfig.app.json",
+            "assets": [
+              "projects/PWA2/src/favicon.ico",
+              "projects/PWA2/src/assets"
+            ],
+            "styles": [
+              "projects/PWA2/src/styles.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/PWA2/src/environments/environment.ts",
+                  "with": "projects/PWA2/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "PWA2:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "PWA2:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "PWA2:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/PWA2/src/test.ts",
+            "polyfills": "projects/PWA2/src/polyfills.ts",
+            "tsConfig": "projects/PWA2/tsconfig.spec.json",
+            "karmaConfig": "projects/PWA2/karma.conf.js",
+            "styles": [
+              "projects/PWA2/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/PWA2/src/favicon.ico",
+              "projects/PWA2/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/PWA2/tsconfig.app.json",
+              "projects/PWA2/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/server",
+            "main": "projects/PWA2/src/main.server.ts",
+            "tsConfig": "projects/PWA2/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "PWA2-e2e": {
+      "root": "projects/PWA2-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/PWA2-e2e/protractor.conf.js",
+            "devServerTarget": "PWA2:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "PWA2:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/PWA2-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "PWATodo"

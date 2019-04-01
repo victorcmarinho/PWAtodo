@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { LibraryModule } from 'library';
+// import { LibraryModule } from 'library';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { LibraryModule } from 'library';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: true }),
-    LibraryModule
+    // LibraryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

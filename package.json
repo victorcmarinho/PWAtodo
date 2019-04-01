@@ -11,7 +11,9 @@
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:client-and-server-bundles": "ng build --prod && ng run PWATodo:server:production"
+    "build:client-and-server-bundles": "ng build --prod && ng run PWATodo:server:production",
+    "build:ssr:PWA2": "npm run build:client-and-server-bundles:PWA2 && npm run compile:server",
+    "build:client-and-server-bundles:PWA2": "ng build --prod && ng run PWA2:server:production"
   },
   "private": true,
   "dependencies": {
