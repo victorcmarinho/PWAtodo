@@ -157,33 +157,33 @@
         }
       }
     },
-    "tvmaze": {
-      "root": "projects/tvmaze",
-      "sourceRoot": "projects/tvmaze/src",
+    "library": {
+      "root": "projects/library",
+      "sourceRoot": "projects/library/src",
       "projectType": "library",
-      "prefix": "tm",
+      "prefix": "lb",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/tvmaze/tsconfig.lib.json",
-            "project": "projects/tvmaze/ng-package.json"
+            "tsConfig": "projects/library/tsconfig.lib.json",
+            "project": "projects/library/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/tvmaze/src/test.ts",
-            "tsConfig": "projects/tvmaze/tsconfig.spec.json",
-            "karmaConfig": "projects/tvmaze/karma.conf.js"
+            "main": "projects/library/src/test.ts",
+            "tsConfig": "projects/library/tsconfig.spec.json",
+            "karmaConfig": "projects/library/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/tvmaze/tsconfig.lib.json",
-              "projects/tvmaze/tsconfig.spec.json"
+              "projects/library/tsconfig.lib.json",
+              "projects/library/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

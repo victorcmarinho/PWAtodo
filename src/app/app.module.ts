@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { TvmazeModule } from 'tvmaze/tvmaze';
+import { LibraryModule } from 'library';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { TvmazeModule } from 'tvmaze/tvmaze';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: true }),
-    TvmazeModule
+    LibraryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

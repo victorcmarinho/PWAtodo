@@ -24,6 +24,12 @@
       ],
       "tvmaze/*": [
         "dist/tvmaze/*"
+      ],
+      "library": [
+        "dist/library"
+      ],
+      "library/*": [
+        "dist/library/*"
       ]
     }
   }
